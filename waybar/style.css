@@ -1,0 +1,140 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Courier, monospace;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #3b4252;
+  color: white;
+}
+
+/* left */
+#workspaces {
+  background-color: #4c566a;
+  margin: 5px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  padding: 0 20px;
+  color: #eceff4;
+}
+
+#workspaces button.focused {
+  color: #2e3440;
+  background-color: #88c0d0;
+  border-radius: 30px;
+}
+
+#workspaces button:hover {
+  background-color: #5e81ac;
+  border-radius: 25px;
+}
+/* fin-left */
+
+/* right right */
+
+/* #tray, */
+#network,
+#temperature,
+#cpu,
+#memory,
+#battery {
+  background-color: #4c566a;
+  padding: 0px 10px;
+  margin: 5px 0px;
+}
+
+#network {
+  margin-left: 10px;
+  border-radius: 10px 0px 0px 10px;
+  color: #d08770;
+}
+
+#battery {
+  color: #a3be8c;
+  border-radius: 0px 10px 10px 0px;
+  margin-right: 10px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+#battery.charging {
+  color: #a3be8c;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#tray {
+  color: #b48ead;
+}
+
+#memory {
+  color: #ebcb8b;
+}
+
+#temperature {
+  color: #8fbcbb;
+}
+
+#cpu {
+  color: #ebcb8b;
+}
+/* fin right right */
+
+/* start right left */
+#pulseaudio,
+#custom-dnd,
+#idle_inhibitor,
+#backlight {
+  background-color: #4c566a;
+  padding: 0px 15px;
+  margin: 5px 0px;
+}
+
+#pulseaudio {
+  color: #ebcb8b;
+}
+
+#backlight {
+  margin-right: 10px;
+  color: #d8dee9;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#idle_inhibitor {
+  color: #8fbcbb;
+  border-radius: 10px 0px 0px 10px;
+}
+
+#idle_inhibitor.activated {
+  color: #bf616a;
+}
+/* fin right left */
+
+/* start center */
+#clock {
+  color: #b48ead;
+  background-color: #4c566a;
+  padding: 0px 20px;
+  margin: 5px 0px;
+  border-radius: 10px;
+}
+/* fin center */

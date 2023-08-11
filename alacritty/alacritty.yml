@@ -1,0 +1,30 @@
+import:
+  - "/home/user/.config/alacritty/dracula.yml"
+
+window:
+  dynamic_padding: true
+  decoration: none
+  opacity: .85
+  padding:
+    x: 0
+    y: 0
+
+live_config_reload: true
+
+font:
+  normal:
+    family: JetBrainsMonoNerdFont
+  bold:
+    family: JetBrainsMonoNerdFont
+    style: Bold
+  italic:
+    family: JetBrainsMonoNerdFont
+    style: Italic
+
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+
+key_bindings:
+  - { key: V, mods: Control, action: Paste }
+env:
+  TERM: "alacritty"

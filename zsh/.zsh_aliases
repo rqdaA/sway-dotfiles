@@ -1,0 +1,13 @@
+alias cat="bat"
+alias l="/bin/ls"
+alias ll='exa --icons -lah --group-directories-first'
+alias lt='exa --icons -T -I .git -I node_modules -I target'
+alias v='nvim'
+alias mute="amixer sset Master mute"
+alias unmute="amixer sset Master unmute"
+alias gcm='git commit -m'
+alias gc='git checkout '
+alias firefox='firefox > /dev/null 2>&1 &'
+alias home='cd ~/me && ll'
+alias spt='systemctl --user start spotifyd.service && spt && systemctl --user stop spotifyd.service'
+alias lock='swaylock --screenshots --clock --indicator-radius 100 --effect-blur 7x5 --effect-greyscale --indicator-idle-visible --ring-color 81A1C1 --text-color 8fbcbb --key-hl-color 8fbcbb --bs-hl-color 8f616a'
