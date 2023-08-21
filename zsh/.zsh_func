@@ -20,8 +20,19 @@ pwn-exec() {
     docker exec --detach-keys "ctrl-x,x" -it $1 bash
 }
 
+pwn-alpine-compile() {
+    if [[ $1 == "t" ]]; then
+        docker run --rm -v "$PWD:/work" -it alpine-gcc /bin/sh -c 'gcc -S exploit.c -o exploit.S && x86_64-alpine-linux-musl-gcc exploit.S --static -o exploit && chown 1000:1001 ./exploit'
+        strip ./exploit
+        gzip ./exploit -c > ./exploit.gz
+        base64 ./exploit.gz > ./exploit.gz.b64
+    else;
+        docker run --rm -v "$PWD:/work" -it alpine-gcc /bin/sh -c 'gcc exploit.c --static -o exploit && chown 1000:1001 ./exploit'
+    fi
+}
+
 cl() {
-    cd $1 && ll
+    cd ${1:-"$HOME/me"} && ll
 }
 
 pomodoro() {

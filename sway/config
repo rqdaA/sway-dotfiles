@@ -22,8 +22,8 @@ set $menu wofi --show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/rqda/arch.png fill
-exec 'swww init && /home/user/.local/bin/random_wallpaper.sh animated'
+output * bg /usr/share/backgrounds/rqda/pics/arch.png fill
+# exec 'swww init && /home/user/.local/bin/random_wallpaper.sh animated'
 
 # Example configuration:
 #
