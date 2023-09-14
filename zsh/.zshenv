@@ -3,7 +3,6 @@ export PATH="/home/user/.cargo/bin:$PATH"
 export PATH="/home/user/.local/bin:$PATH"
 export PATH="/home/user/go/bin/:$PATH"
 export PATH="/home/user/me/bin/:$PATH"
-export PATH="/home/user/me/bin/lysithea/:$PATH"
 export PATH="/home/user/.local/share/gem/ruby/3.0.0/bin/:$PATH"
 
 export MOZ_ENABLE_WAYLAND=1
