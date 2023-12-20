@@ -13,16 +13,16 @@ live_config_reload: true
 
 font:
   normal:
-    family: JetBrainsMonoNerdFont
+    family: Gomono Nerd Font Propo
   bold:
-    family: JetBrainsMonoNerdFont
+    family: Gomono Nerd Font Propo
     style: Bold
   italic:
-    family: JetBrainsMonoNerdFont
+    family: Gomono Nerd Font Propo
     style: Italic
 
 selection:
-  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>_ '
 
 key_bindings:
   - { key: V, mods: Control, action: Paste }

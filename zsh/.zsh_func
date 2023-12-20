@@ -1,3 +1,5 @@
+pwn-exec() { docker exec --detach-keys "ctrl-x,y" -it "$1" bash }
+
 _remove_container() {
     log=$(docker ps -a | grep $1) 1> /dev/null 2>&1
     if [[ $log == *"Up "* ]]; then
@@ -5,18 +7,16 @@ _remove_container() {
         (docker kill $1 && docker rm $1) 1> /dev/null 2>&1
     elif [[ $log == *"Exited "* ]]; then
         docker rm $1 1> /dev/null 2>&1
-    fi
+    fi;
 }
 
 pwn-container() {
-    containers=("20.04" "22.04" "mantic")
-    _remove_container $2
+    containers=("20.04" "22.04" "23.04" "23.10")
+    _remove_container "$2"
     echo "pwn-img:${containers[$3]}"
-    docker run --rm -d -it --name $2 --mount type=bind,source="/home/user/me/ctf/$1/$2",target="/home/user/ctf/" "pwn-img:${containers[$3]}" 1> /dev/null 2>&1
+    docker run --privileged --rm -d -it --name $2 --mount type=bind,source="/home/user/me/ctf/$1/$2",target="/home/user/ctf/" "pwn-img:${containers[$3]}" 1> /dev/null 2>&1
     pwn-exec $2
 }
-
-pwn-exec() { docker exec --detach-keys "ctrl-x,y" -it $1 bash }
 
 pwn-alpine-compile() {
     if [[ $1 == "t" ]]; then
@@ -30,7 +30,7 @@ pwn-alpine-compile() {
 }
 
 pwn-sandbox() {
-    containers=("20.04" "22.04" "mantic")
+    containers=("20.04" "22.04" "23.04" "23.10")
     _remove_container "sand"
     echo "pwn-img:${containers[$1]}"
     docker run --rm -d -it --name "sand" --mount type=bind,source="/home/user/me/sand/lang",target="/home/user/ctf/" "pwn-img:${containers[$1]}" 1> /dev/null 2>&1

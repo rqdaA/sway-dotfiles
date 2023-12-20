@@ -5,6 +5,11 @@
 # * set the resolution and position for your screen: output HDMI1 mode 1920x1080 position 0,0
 # * set the scaling for your screen: output HDMI1 scale 2
 
+profile coins-computer-room {
+	output eDP-1 disable
+    output 'Philips Consumer Electronics Company PHL' mode 3840x2160 position 0,0
+}
+
 profile {
 	output eDP-1 disable
     output DP-1 position 0,0

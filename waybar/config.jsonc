@@ -53,7 +53,8 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "󰤮 Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-middle": "exec $term_float nmtui"
     },
     "memory": {
         "interval": 10,
@@ -98,9 +99,9 @@
         "device": "intel_backlight",
         "smooth-scrolling-threshold": 0.8,
         // reverse-scrolling
-        "on-scroll-up": "brightnessctl.sh down 3%",
-        "on-scroll-down": "brightnessctl.sh up 3%",
-        "on-click": "brightnessctl.sh step",
+        "on-scroll-up": "exec $brightness_up",
+        "on-scroll-down": "exec $brightness_down",
+        "on-click": "/home/user/me/bin/brightnessctl.sh step",
         "format": "  {percent}%",
     },
     "cpu": {

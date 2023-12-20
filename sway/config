@@ -19,6 +19,11 @@ set $term_float $term --class floating_shell -e
 # on the original workspace that the command was run on.confi
 set $menu wofi --show drun
 
+set $brightness /home/user/me/bin/brightnessctl.sh
+set $brightness_up $brightness up 5%
+set $brightness_down $brightness down 5%
+set $brightness_step $brightness step
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -186,14 +191,22 @@ input type:touchpad {
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
+#
+# User defined:
+#
+    # Show clipboard history
     bindsym Ctrl+Shift+v exec clipman pick -t wofi
     
+    # Lock session
     bindsym Mod4+l exec $lock
     
     # Take screen shot
     bindsym Mod4+Shift+s exec 'grim -g "$(slurp)" - | wl-copy'
+
+    # Take screen shot of whole screen
+    bindsym print exec 'grim - | wl-copy', mode "default"
     
-    # Input emoji using wofi
+    # Input emoji with wofi
     bindsym Mod4+e exec wofi-emoji
 #
 # Resizing containers:

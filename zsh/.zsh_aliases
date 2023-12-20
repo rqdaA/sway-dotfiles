@@ -14,4 +14,4 @@ alias john="$HOME/me/ctf/tools/john/john"
 alias lysithea="$HOME/me/ctf/tools/lysithea/lysithea"
 alias lock='swaylock --screenshots --clock --indicator-radius 100 --effect-blur 7x5 --effect-greyscale --indicator-idle-visible --ring-color 81A1C1 --text-color 8fbcbb --key-hl-color 8fbcbb --bs-hl-color 8f616a'
 alias ip='ip -c'
-
+alias gm='cz c'
