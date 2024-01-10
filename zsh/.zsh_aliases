@@ -1,6 +1,7 @@
 alias cat="bat"
 alias l="/bin/ls"
 alias ll='exa --icons -lah --group-directories-first'
+alias ll='exa --icons -lah --group-directories-first -rs date'
 alias lt='exa --icons -T -I .git -I node_modules -I target'
 alias v='nvim'
 alias mute="amixer sset Master mute"
@@ -12,6 +13,7 @@ alias home='cd ~/me && ll'
 alias spt='systemctl --user start spotifyd.service && spt && systemctl --user stop spotifyd.service'
 alias john="$HOME/me/ctf/tools/john/john"
 alias lysithea="$HOME/me/ctf/tools/lysithea/lysithea"
+alias ffuf="$HOME/me/ctf/tools/ffuf/ffuf"
 alias lock='swaylock --screenshots --clock --indicator-radius 100 --effect-blur 7x5 --effect-greyscale --indicator-idle-visible --ring-color 81A1C1 --text-color 8fbcbb --key-hl-color 8fbcbb --bs-hl-color 8f616a'
 alias ip='ip -c'
 alias gm='cz c'
